@@ -52,6 +52,7 @@ class Processor:
             codonsList = self.__combine__(lst,i)
             sub_orf = self.__process__(codonsList)
             sub_orf_str = ''.join(sub_orf)
+            sub_orf_str = sub_orf_str[:-1]
             orf_5_3 += '5\'3\' Frame '+str(i+1)+'\n'+sub_orf_str+'\n'
 
         #reverse the list
@@ -61,6 +62,7 @@ class Processor:
             codonsList = self.__combine__(reversedLst,i)
             sub_orf = self.__process__(codonsList)
             sub_orf_str = ''.join(sub_orf)
+            sub_orf_str = sub_orf_str[:-1]
             orf_3_5 += '3\'5\' Frame '+str(i+1)+'\n'+sub_orf_str+'\n'
         orf = orf_5_3+orf_3_5
         return orf
